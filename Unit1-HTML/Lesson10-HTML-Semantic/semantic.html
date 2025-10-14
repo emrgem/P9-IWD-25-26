@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Blog - DIV Layout</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+      }
+      #logo {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      nav {
+        display: flex;
+        gap: 20px;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        background-color: #555;
+        border-radius: 4px;
+      }
+      nav a:hover {
+        background-color: #777;
+      }
+      #container {
+        display: flex;
+        max-width: 1200px;
+        margin: 20px auto;
+        gap: 20px;
+      }
+      #main-content {
+        flex: 3;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      article {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #eee;
+      }
+      .post-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .post-meta {
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      .post-body {
+        line-height: 1.6;
+        color: #444;
+      }
+      aside {
+        flex: 1;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        height: fit-content;
+      }
+      .widget {
+        margin-bottom: 20px;
+      }
+      .widget-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .widget-content {
+        color: #666;
+      }
+      .widget-content ul {
+        list-style: none;
+        padding: 0;
+      }
+      .widget-content li {
+        padding: 5px 0;
+      }
+      .widget-content a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      .widget-content a:hover {
+        text-decoration: underline;
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER SECTION -->
+    <header>
+      <div id="logo">Tech Blog</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#articles">Articles</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <div id="container">
+      <!-- MAIN CONTENT AREA -->
+      <main id="main-content">
+        <article>
+          <div class="post-title">Understanding HTML Semantics</div>
+          <div class="post-meta">Posted on March 15, 2025 by John Doe</div>
+          <div class="post-body">
+            <p>
+              HTML semantics refers to the practice of using HTML elements that
+              clearly describe their meaning in a human-readable way. Instead of
+              using generic div elements everywhere, we use elements like
+              header, nav, article, and footer.
+            </p>
+            <p>
+              This approach makes our code more accessible to screen readers,
+              better for SEO, and easier for other developers to understand and
+              maintain.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <div class="post-title">The Power of Semantic Elements</div>
+          <div class="post-meta">Posted on March 10, 2025 by Jane Smith</div>
+          <div class="post-body">
+            <p>
+              Semantic HTML elements provide meaning to the browser and
+              developer. Elements like article, section, and aside tell us
+              exactly what kind of content they contain.
+            </p>
+            <p>
+              When you use semantic elements, you're not just writing code –
+              you're communicating the structure and purpose of your content.
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <div class="post-title">Accessibility Matters</div>
+          <div class="post-meta">Posted on March 5, 2025 by Mike Johnson</div>
+          <div class="post-body">
+            <p>
+              Using semantic HTML is one of the easiest ways to improve the
+              accessibility of your website. Screen readers rely on proper HTML
+              structure to help users navigate content efficiently.
+            </p>
+            <p>
+              By using semantic elements, you're making the web more inclusive
+              for everyone.
+            </p>
+          </div>
+        </article>
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside>
+        <div class="widget">
+          <div class="widget-title">Popular Posts</div>
+          <div class="widget-content">
+            <ul>
+              <li><a href="#">Getting Started with HTML5</a></li>
+              <li><a href="#">CSS Grid Layout Guide</a></li>
+              <li><a href="#">JavaScript Basics</a></li>
+              <li><a href="#">Responsive Design Tips</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">Categories</div>
+          <div class="widget-content">
+            <ul>
+              <li><a href="#">HTML (12)</a></li>
+              <li><a href="#">CSS (8)</a></li>
+              <li><a href="#">JavaScript (15)</a></li>
+              <li><a href="#">Web Design (6)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget">
+          <div class="widget-title">About This Blog</div>
+          <div class="widget-content">
+            <p>Learn web development through practical tutorials and guides.</p>
+          </div>
+        </div>
+    </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 Tech Blog. All rights reserved.</p>
+      <p>Follow us on social media for updates!</p>
+    </footer>
+  </body>
+</html>

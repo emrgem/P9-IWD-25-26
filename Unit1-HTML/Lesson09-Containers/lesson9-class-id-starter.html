@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Classes & IDs Practice</title>
+    <style>
+      /* CSS is provided - you'll learn this later! */
+      /* For now, focus on using classes and IDs correctly in your HTML */
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+      }
+
+      /* ID Selectors - use # */
+      #main-header {
+        background-color: navy;
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+
+      #main-content {
+        background-color: white;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      /* Class Selectors - use . */
+      .card {
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 15px 0;
+        background-color: white;
+      }
+
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+
+      .price {
+        color: green;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .badge {
+        background-color: blue;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 14px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin: 5px;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+      }
+
+      .error {
+        color: red;
+        font-weight: bold;
+      }
+
+      .success {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="main-header"></div>    -->
+    <div id="main-header">
+      <h1>Classes & Ids</h1>
+    </div>
+
+    <div id="main-content">
+      <div class="card">
+        <h2>John Smith</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          <span class="highlight">Inventore</span>, doloribus.
+        </p>
+        <!-- <button class="btn btn-primary"></button> -->
+        <button class="btn btn-primary">Follow</button>
+        <button class="btn btn-secondary">Message</button>
+      </div>
+
+      <div class="card">
+        <h2>Wireless Headphones</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure,
+          architecto.
+        </p>
+        <p>
+          Price: <span class="price">$199</span>
+          <span class="badge">New Arrival</span>
+        </p>
+        <button class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="card">
+        <h2>🔥Flash Sale - Gaming PC</h2>
+        <p>
+          High Performance Gaming PC!
+          <span class="highlight">RTX 4070 graphics</span>
+          <span class="highlight">144 GHZ Monitor</span>
+        </p>
+        <p>
+          <span class="error">Sale ends in 2 hours!</span>
+        </p>
+        <p>
+          <span class="success">Free shipping included!</span>
+        </p>
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-secondary">Add to Wishlist</button>
+      </div>
+    </div>
+  </body>
+</html>

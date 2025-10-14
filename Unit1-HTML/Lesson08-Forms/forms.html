@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML FORMS</title>
+  </head>
+  <body>
+    <h1>Contact Form</h1>
+    <form action="results.html" method="GET">
+      <table>
+        <!-- Basic Text -->
+        <tr>
+          <td><label for="username">Username</label></td>
+          <td><input type="text" name="username" id="username" /></td>
+        </tr>
+        <!-- Email with validation -->
+        <tr>
+          <td><label for="email">Email</label></td>
+          <td><input type="email" name="email" id="email" /></td>
+        </tr>
+        <!-- Password (hidden) -->
+        <tr>
+          <td><label for="password">Password</label></td>
+          <td><input type="password" name="password" id="password" /></td>
+        </tr>
+        <!-- Phone Number -->
+        <tr>
+          <td><label for="phone">Phone:</label></td>
+          <td><input type="tel" name="phone" id="phone" /></td>
+        </tr>
+        <!-- Website URL -->
+        <tr>
+          <td><label for="website">Website:</label></td>
+          <td><input type="url" name="website" id="website" /></td>
+        </tr>
+        <!-- Date -->
+                 <tr>
+          <td><label for="website">Date:</label></td>
+          <td><input type="date" name="date" id="date" /></td>
+        </tr>
+        <!-- Time -->
+                 <tr>
+          <td><label for="time">Time:</label></td>
+          <td><input type="time" name="time" id="time" /></td>
+        </tr>
+        <!-- Multi-line Text Area -->
+         <tr>
+            <td><label for="message">Message:</label></td>
+            <td><textarea name="message" id="message" rows="4"></textarea></td>
+         </tr>
+         <!-- Radio Button (Multiple Choice) -->
+          <tr>
+            <td>Grade:</td>
+            <td>
+                <label><input type="radio" name="grade" value="9">9th Grade</label>
+                <label><input type="radio" name="grade" value="10">10th Grade</label>
+            </td>
+          </tr>
+         <!-- Checkboxes -->
+          <tr>
+            <td>Grade:</td>
+            <td>
+                <label><input type="checkbox" name="grade" value="9">9th Grade</label>
+                <label><input type="checkbox" name="grade" value="10">10th Grade</label>
+                <label><input type="checkbox" name="grade" value="11">11th Grade</label>
+            </td>
+          </tr>
+          <!-- Select (Drop Down) -->
+          <tr>
+            <td>Favorite Sports</td>
+            <td>
+              <select name="sports" id="sports">
+                <option value="" selected disabled>Select a sport:</option>
+                <option value="soccer">Soccer</option>
+                <option value="baseball">Baseball</option>
+                <option value="basketball">Basketball</option>
+              </select>
+            </td>
+          </tr>
+      </table>
+      <!-- <input type="submit" value="Submit"> -->
+      <button type="submit" >Submit</button>
+    </form>
+  </body>
+</html>
