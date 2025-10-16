@@ -1,0 +1,122 @@
+/* ==========================================
+   COMBINATOR SELECTOR PRACTICE
+   Practice using different combinator types
+   ========================================== */
+
+/* Base Reset and Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ab9b9b;
+    color: #333;
+}
+
+/* ==========================================
+   DESCENDANT SELECTOR CHALLENGES
+   ========================================== */
+
+/* TODO 1: Style ALL paragraphs inside the main article
+   - Make them slightly larger
+   - Add a specific color
+   Hint: Use a descendant selector
+*/
+/* .main-article p { */
+.article-content p {
+   font-size: 18px;
+   color: #010201;
+   background-color: yellow;
+}
+
+
+/* TODO 2: Style anchor tags inside .post-footer
+   - Remove underline
+   - Add a specific color
+   - Add hover effect
+*/
+
+
+/* ==========================================
+   CHILD SELECTOR CHALLENGES
+   ========================================== */
+
+/* TODO 3: Style DIRECT children of .recent-posts 
+   - Add a border between articles
+   - Ensure only direct article children are styled
+   Hint: Use child selector (>)
+*/
+.recent-posts > article {
+   border-bottom: 1px solid #ecf0f1;
+   padding-bottom: 15px;
+   margin-bottom: 15px;
+}
+
+/* TODO 4: Style DIRECT list items in sidebar widget
+   - Add specific styling to the first-level list items
+   Hint: Use child selector (>)
+*/
+
+
+/* ==========================================
+   ADJACENT SIBLING SELECTOR CHALLENGES
+   ========================================== */
+
+/* TODO 5: Style paragraphs IMMEDIATELY AFTER h3 in .recent-posts
+   - Add a specific text style
+   - Italicize these paragraphs
+   Hint: Use adjacent sibling selector (+)
+*/
+.recent-posts h3 + p {
+   font-style: italic;
+   color: #7f8c8d;
+}
+
+/* ==========================================
+   COMBINING SELECTORS 
+   Practice combining different selector types
+   ========================================== */
+
+/* TODO 6: Style a very specific selector
+   - Target the first paragraph in the main article 
+     that is a direct child of .article-content
+   - Give it a bold, slightly larger style
+   Hint: Combine multiple selector types
+*/
+
+
+/* ==========================================
+   ADVANCED CHALLENGE (BONUS)
+   ========================================== */
+
+/* TODO 7: Create a complex selector that:
+   - Targets paragraphs
+   - Inside .article-meta
+   - That are direct children
+   - Style them with a muted color and smaller font
+*/
+
+
+/* ==========================================
+   OPTIONAL STYLING ENHANCEMENTS
+   ========================================== */
+
+/* Add some basic responsive and hover effects */
+/* You can expand on these if you want */
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive basic layout */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+}
