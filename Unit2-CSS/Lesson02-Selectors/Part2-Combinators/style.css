@@ -36,6 +36,15 @@ body {
    - Add hover effect
 */
 
+.recent-posts .post-footer a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.recent-posts .post-footer a:hover {
+  color: #2980b9;
+}
 
 /* ==========================================
    CHILD SELECTOR CHALLENGES
@@ -56,7 +65,11 @@ body {
    - Add specific styling to the first-level list items
    Hint: Use child selector (>)
 */
-
+.sidebar .widget > ul > li {
+  color: #34495e;
+  padding: 5px 0;
+  border-bottom: 1px solid #ecf0f1;
+}
 
 /* ==========================================
    ADJACENT SIBLING SELECTOR CHALLENGES
@@ -84,6 +97,11 @@ body {
    Hint: Combine multiple selector types
 */
 
+.main-article .article-content > p:first-child {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2c3e50;
+}
 
 /* ==========================================
    ADVANCED CHALLENGE (BONUS)
