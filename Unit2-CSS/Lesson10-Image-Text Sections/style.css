@@ -1,0 +1,221 @@
+/* ===================================
+   CSS - END OF LESSON 9
+   Foundation + Interactivity + Features + Typography
+   =================================== */
+
+/* ===================================
+   LESSON 6: Reset & Base Styles
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* LESSON 9: Google Font */
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container for consistent width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   LESSON 9: TYPOGRAPHY SYSTEM
+   =================================== */
+
+/* Heading hierarchy */
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Body text */
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* ===================================
+   LESSON 6-7: HEADER SECTION
+   =================================== */
+.main-header {
+    background-color: #2c3e50;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px; /* LESSON 9: Increased */
+    font-weight: 700; /* LESSON 9: Bolder */
+    color: #ffffff;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500; /* LESSON 9: Added weight */
+    transition: color 0.3s ease; /* LESSON 7: Added transition */
+}
+
+/* LESSON 7: Hover effects */
+.main-nav a:hover {
+    color: #3498db;
+}
+
+/* LESSON 7: Focus states for accessibility */
+.main-nav a:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 4px;
+}
+
+/* ===================================
+   LESSON 6: HERO SECTION
+   =================================== */
+.hero {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 120px 0; /* LESSON 9: Increased padding */
+    text-align: center;
+}
+
+.hero-title {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* LESSON 9: Added text shadow */
+}
+
+.hero-subtitle {
+    font-size: 22px; /* LESSON 9: Adjusted */
+    margin-bottom: 40px; /* LESSON 9: Increased spacing */
+    max-width: 700px; /* LESSON 9: Constrained width */
+    margin-left: auto; /* LESSON 9: Center constrained text */
+    margin-right: auto; /* LESSON 9: Center constrained text */
+}
+
+/* ===================================
+   LESSON 6-7: BUTTONS
+   =================================== */
+.btn {
+    padding: 15px 35px; /* LESSON 8: Adjusted padding */
+    font-size: 18px;
+    border: none;
+    border-radius: 8px; /* LESSON 8: More rounded */
+    cursor: pointer;
+    font-weight: 600; /* LESSON 9: Added weight */
+    font-family: 'Poppins', sans-serif; /* LESSON 9: Ensures Poppins */
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* LESSON 8: Added shadow */
+}
+
+.btn-primary {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+/* LESSON 7: Button hover effects */
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* LESSON 8: Enhanced shadow */
+}
+
+/* LESSON 7: Button active (click) effect */
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ===================================
+   LESSON 8-9: FEATURES SECTION
+   =================================== */
+.features {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+/* LESSON 8: Section headings */
+.section-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 50px;
+}
+
+/* LESSON 8: Flexbox grid for cards */
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* LESSON 8: Individual feature cards */
+.feature-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* LESSON 8: Card hover effect */
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* LESSON 8: Feature icons */
+.feature-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+/* LESSON 8: Card headings */
+.feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* LESSON 8: Card text */
+.feature-card p {
+    color: #7f8c8d;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   END OF LESSON 9
+   Your site now has professional typography!
+   =================================== */
