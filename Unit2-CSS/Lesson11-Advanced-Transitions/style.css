@@ -1,0 +1,407 @@
+/* ===================================
+   CSS - END OF LESSON 10
+   Foundation + Interactivity + Features + Typography + Image Sections
+   =================================== */
+
+/* ===================================
+   LESSON 6: Reset & Base Styles
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   LESSON 9: TYPOGRAPHY SYSTEM
+   =================================== */
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* ===================================
+   LESSON 6-7: HEADER & NAVIGATION
+   =================================== */
+.main-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: white;
+    margin: 0;
+}
+
+.main-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+}
+
+.main-nav a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+
+
+/* ===================================
+   LESSON 6: HERO SECTION
+   =================================== */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 160px 0 100px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-title:hover {
+color: #f39c12;
+transform: scale(1.05);
+}
+
+.hero-subtitle {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===================================
+   LESSON 6-7: BUTTON STYLES
+   =================================== */
+.btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, 
+              box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px 
+              rgba(0,0,0,0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px 
+              rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: #667eea;
+    border: 2px solid transparent;
+}
+
+.btn-secondary:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===================================
+   LESSON 8-9: FEATURES SECTION
+   =================================== */
+.features {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, 
+              box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+}
+
+
+.feature-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #7f8c8d;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   LESSON 10: ABOUT SECTION - Image & Text Layout
+   =================================== */
+.about {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.about-image img:hover, .community-image img:hover {
+    transform: scale(1.1);
+}
+
+
+/* ===================================
+   LESSON 10: COMMUNITY SECTION - Reversed Layout
+   =================================== */
+.community {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.community-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-direction: row-reverse;
+}
+
+.community-text {
+    flex: 1;
+}
+
+.community-image {
+    flex: 1;
+}
+
+.community-text h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.community-text p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+.community-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+
+/* ===================================
+   LESSON 8: RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    .hero-title {
+        font-size: 2.5em;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1em;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .main-nav {
+        gap: 15px;
+    }
+    
+    .hero {
+        padding: 140px 0 80px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .features-grid {
+        flex-direction: column;
+    }
+    
+    .about-content,
+    .community-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .features-grid {
+        flex-wrap: wrap;
+    }
+    
+    .feature-card {
+        min-width: calc(50% - 15px);
+    }
+    
+    .container {
+        padding: 0 30px;
+    }
+}
+
+/* ===================================
+   START OF LESSON 11
+   =================================== */
