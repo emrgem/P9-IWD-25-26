@@ -1,0 +1,92 @@
+/* ===================================
+   CSS - END OF LESSON 6
+   Basic foundation and structure
+   =================================== */
+
+/* ===================================
+   LESSON 6: Reset & Base Styles
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container for consistent width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   LESSON 6: HEADER SECTION
+   =================================== */
+.main-header {
+    background-color: #2c3e50;
+    padding: 20px 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+/* ===================================
+   LESSON 6: HERO SECTION
+   =================================== */
+.hero {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* ===================================
+   LESSON 6: BUTTONS
+   =================================== */
+.btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+/* ===================================
+   END OF LESSON 6
+   =================================== */
