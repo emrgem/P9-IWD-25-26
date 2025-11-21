@@ -1,0 +1,49 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    /* animation-name: example;
+    animation-duration: 4s; */
+    /* animation: moveColor 1s infinite; */
+    /* animation: colorTransform 1s infinite; */
+    animation: heartBeat 1s infinite;
+}
+
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+@keyframes example {
+    0% {background-color: red;}
+    25% {background-color: yellow;}
+    50% {background-color: rgb(21, 130, 138);}
+    75% {background-color: rgb(34, 37, 37);}
+    100% {background-color: rgb(211, 9, 141);}
+}
+
+@keyframes moveColor {
+    0% {background-color: red; left: 0; top: 0; }
+    25% {background-color: yellow; left: 150px; top: 0;}
+    50% {background-color: rgb(21, 130, 138); left: 150px; top: 150px;}
+    75% {background-color: rgb(34, 37, 37); left: 0; top: 150px;}
+    100% {background-color: rgb(211, 9, 141); left: 0; top: 0;}
+}
+
+@keyframes colorTransform {
+    0% {background-color: red; transform: rotate(0deg) scale(1); }
+    25% {background-color: yellow; transform: rotate(90deg) scale(1.2);}
+    50% {background-color: rgb(21, 130, 138); transform: rotate(180deg) scale(1);}
+    75% {background-color: rgb(34, 37, 37);  transform: rotate(270deg) scale(1.2);}
+    100% {background-color: rgb(211, 9, 141); transform: rotate(360deg) scale(1);}
+}
+
+@keyframes heartBeat {
+    0% {transform: scale(1); }
+    25% {transform: scale(1.5); }
+    50% {transform: scale(1); }
+    75% {transform: scale(1.5); }
+    100% {transform: scale(1); }
+}
+
