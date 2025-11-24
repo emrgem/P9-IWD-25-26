@@ -1,0 +1,147 @@
+/* ========================================
+   BASIC PAGE SETUP - ALREADY DONE FOR YOU
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Activity Card Styling */
+.activity {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.activity h2 {
+    color: #4fc3f7;
+    margin-bottom: 15px;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #43e97b;
+    font-size: 0.9em;
+}
+
+.instructions ol,
+.instructions ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.instructions li {
+    margin-bottom: 5px;
+}
+
+.instructions code {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ffd700;
+    font-size: 0.9em;
+}
+
+/* Demo Area - Where your animations will appear */
+.demo-area {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 60px;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ========================================
+   YOUR CODE STARTS HERE!
+   Add your animations below
+   ======================================== */
+
+/* ACTIVITY 1: BOUNCING BALL */
+/* TODO: Create .ball styles here */
+
+.ball {
+    /* Size and Shape */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* Colors and effects */
+    background-color: orangered;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Apply the animation */
+    animation: bounce 1s ease-in-out infinite;
+}
+/* TODO: Create @keyframes bounce here */
+@keyframes bounce {
+    0% {transform: translateY(0)} /*start at the bottom*/
+    50% {transform: translateY(-75px)} /*Jump up to 150px*/
+    100% {transform: translateY(0)} /*Return to bottom*/
+}
+
+/* ACTIVITY 2: PULSING BUTTON */
+/* TODO: Create .pulse-button styles here */
+
+
+/* TODO: Create @keyframes pulse here */
+
+
+/* ACTIVITY 3: LOADING DOTS */
+/* TODO: Create .loading-dots and .dot styles here */
+.loading-dots {
+    display: flex; /*Arrange the dots horizontally*/
+    gap: 15px;
+}
+.dot {
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    background-color: #4fc3f7;
+    animation: fade 1.2s ease-in-out infinite;
+}
+
+/* TODO: Create animation delays for each dot */
+
+
+/* TODO: Create @keyframes fade here */
+@keyframes fade {
+    0% {opacity: 0.3;} /*Dim*/
+    50% {opacity: 1;} /*Bright*/
+    100% {opacity: 0.3;} /*Dim*/
+
+}
+
+/* ACTIVITY 4: CREATIVE SCENE */
+/* TODO: Create your scene and all its elements here */
+
+
+/* TODO: Create all your creative animations here */
