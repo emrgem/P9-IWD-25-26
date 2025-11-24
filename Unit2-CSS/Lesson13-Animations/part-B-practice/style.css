@@ -130,13 +130,21 @@ h1 {
 }
 
 /* TODO: Create animation delays for each dot */
-
+.loading-dots .dot:nth-child(1){ 
+    animation-delay: 0s;            /* Start immediately */
+}
+.loading-dots .dot:nth-child(2){    /* Wait 0.2 seconds */
+    animation-delay: 0.2s;
+}
+.loading-dots .dot:nth-child(3){    /* Wait 0.4 seconds */
+    animation-delay: 0.4s;
+}
 
 /* TODO: Create @keyframes fade here */
 @keyframes fade {
-    0% {opacity: 0.3;} /*Dim*/
+    0%, 100% {opacity: 0.3;} /*Dim*/
     50% {opacity: 1;} /*Bright*/
-    100% {opacity: 0.3;} /*Dim*/
+    /*100% {opacity: 0.3;} Dim*/
 
 }
 
