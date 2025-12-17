@@ -1,0 +1,134 @@
+/* =============================================
+   CSS PRACTICE PERFORMANCE TASK
+   
+   TIME LIMIT: 30 minutes
+   TOTAL POINTS: 100 points
+   
+   INSTRUCTIONS:
+   - Complete each task in order
+   - Write your CSS in the designated sections
+   - Test your work in the browser frequently
+   - Partial credit is available
+   
+   DO NOT modify the HTML file!
+   ============================================= */
+
+/* ===========================================
+   TASK 1: Section Background & Typography (20 points)
+   
+   Style the .services section:
+   - Background color: #1a1a2e
+   - Padding: 60px on top/bottom, 40px on left/right
+   
+   Style the .section-title:
+   - Text color: #4fc3f7 (cyan)
+   - Font size: 36px
+   - Center the text
+   - Remove default margins, add 10px bottom margin
+   
+   Style the .section-subtitle:
+   - Text color: #aaaaaa (gray)
+   - Font size: 18px
+   - Center the text
+   - Add 30px bottom margin
+   =========================================== */
+
+/* YOUR CODE FOR TASK 1 HERE: */
+
+
+
+
+/* ===========================================
+   TASK 2: Flexbox Card Layout (20 points)
+   
+   Style the .services-container:
+   - Use flexbox to put cards side-by-side
+   - Add 30px gap between cards
+   - Center the cards horizontally
+   
+   Style each .service-card:
+   - Make all cards equal width using flex
+   - Background color: #2d2d44
+   - Padding: 35px
+   - Center all text inside
+   =========================================== */
+
+/* YOUR CODE FOR TASK 2 HERE: */
+
+
+
+
+/* ===========================================
+   TASK 3: Card Visual Styling (20 points)
+   
+   Continue styling .service-card:
+   - Rounded corners: 15px
+   - Box shadow: 0 5px 20px with rgba(0,0,0,0.3)
+   
+   Style the .card-icon:
+   - Font size: 48px
+   - Add 15px bottom margin
+   
+   Style the .card-title:
+   - Text color: white
+   - Font size: 22px
+   - Add 15px bottom margin
+   
+   Style the .card-description:
+   - Text color: #cccccc
+   - Font size: 15px
+   - Line height: 1.6
+   =========================================== */
+
+/* YOUR CODE FOR TASK 3 HERE: */
+
+
+
+
+/* ===========================================
+   TASK 4: Hover Effect with Transition (20 points)
+   
+   Add a smooth hover effect to .service-card:
+   
+   On the BASE state (.service-card):
+   - Add transition for transform and box-shadow
+   - Duration: 0.3s
+   - Timing: ease
+   
+   On HOVER (.service-card:hover):
+   - Move the card UP by 10px
+   - Increase box-shadow to: 0 15px 35px with rgba(0,0,0,0.4)
+   =========================================== */
+
+/* YOUR CODE FOR TASK 4 HERE: */
+
+
+
+
+/* ===========================================
+   TASK 5: Responsive Design (20 points)
+   
+   Create a media query for screens 768px or smaller:
+   
+   Inside the media query:
+   - Make .services-container stack cards vertically
+   - Change .section-title font size to 28px
+   - Change .services padding to 40px on top/bottom, 20px on left/right
+   
+   REMEMBER: Media queries go at the END of your CSS!
+   =========================================== */
+
+/* YOUR CODE FOR TASK 5 HERE: */
+
+
+
+
+/* =============================================
+   END OF TASKS
+   
+   Checklist before submitting:
+   [ ] All 5 tasks attempted
+   [ ] Semicolons after every property value
+   [ ] Tested in browser
+   [ ] Tested responsive by resizing window
+   ============================================= */
