@@ -16,17 +16,17 @@ console.log("--------------------------------------");
 // TODO 1.1: Create a variable called word with value "JavaScript"
 // Then print its length using .length
 // Expected output: "JavaScript" has 10 characters
-
-
+let word = "JavaScript";
+console.log(`"${word}"  has ${word.length} characters`);
 
 // TODO 1.2: Print the FIRST character of word (index 0)
 // Expected output: First character: J
-
+console.log(`First Character: ${word[0]}`);
 
 
 // TODO 1.3: Print the LAST character using word.length - 1
 // Expected output: Last character: t
-
+console.log(`Last Character: ${word[word.length-1]}`);
 
 
 // TODO 1.4: Print the character at index 4
