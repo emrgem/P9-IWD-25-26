@@ -1,0 +1,860 @@
+/* ===================================
+   GAMEHUB PROJECT - LESSON 14 FINAL
+   Complete CSS with Media Queries
+   Built progressively through Lessons 6-14
+   =================================== */
+
+/* ===================================
+   LESSON 6: RESET & BASE STYLES
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   LESSON 9: TYPOGRAPHY SYSTEM
+   =================================== */
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+/* ===================================
+   LESSON 6-7: HEADER SECTION
+   =================================== */
+.main-header {
+    background-color: #2c3e50;
+    padding: 20px 0;
+    position: relative;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.main-nav a:hover {
+    color: #3498db;
+}
+
+.main-nav a:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 4px;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* ===================================
+   LESSON 14: MOBILE NAVIGATION ELEMENTS
+   =================================== */
+.hamburger {
+    display: none;           /* Hidden by default (desktop) */
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+.hamburger:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+.mobile-nav {
+    display: none;                      /* Hidden by default */
+    flex-direction: column;             /* Stack links vertically */
+    position: absolute;                 /* Position over content */
+    top: 70px;                         /* Below header */
+    left: 0;
+    width: 100%;                       /* Full width */
+    background: #2c3e50;               /* Same as header */
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;                     /* Above other content */
+}
+
+.mobile-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    color: #3498db;
+}
+
+.mobile-nav a:last-child {
+    border-bottom: none;               /* Remove border from last link */
+}
+
+/* ===================================
+   LESSON 6-9-13: HERO SECTION
+   LESSON 13: Added entrance animations
+   =================================== */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 120px 0;
+    text-align: center;
+}
+
+/* LESSON 13: Hero title entrance animation */
+.hero-title {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s ease-out 0.2s forwards;
+}
+
+/* LESSON 13: Hero subtitle entrance animation */
+.hero-subtitle {
+    font-size: 22px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 0.8s ease-out 0.5s forwards;
+}
+
+/* LESSON 13: Hero buttons container */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s ease-out 0.8s forwards;
+}
+
+/* ===================================
+   LESSON 6-7-11: BUTTONS
+   =================================== */
+.btn {
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #667eea;
+    border: 2px solid transparent;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn-secondary:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ===================================
+   LESSON 8-9-13: FEATURES SECTION
+   LESSON 13: Added card entrance animations
+   =================================== */
+.features {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* LESSON 13: Feature cards with entrance animation */
+.feature-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* LESSON 13: Stagger the card animations */
+.feature-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #7f8c8d;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ===================================
+   LESSON 10: ABOUT SECTION
+   =================================== */
+.about {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
+}
+
+/* ===================================
+   LESSON 10: COMMUNITY SECTION
+   =================================== */
+.community {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.community-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-direction: row-reverse;
+}
+
+.community-text {
+    flex: 1;
+}
+
+.community-text h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.community-text p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.community-image {
+    flex: 1;
+}
+
+.community-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.community-image img:hover {
+    transform: scale(1.03);
+}
+
+/* ===================================
+   LESSON 12: FOOTER SECTION
+   =================================== */
+.main-footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.footer-section p {
+    color: #bdc3c7;
+    font-size: 16px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #3498db;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #95a5a6;
+}
+
+.footer-bottom a {
+    color: #95a5a6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #3498db;
+}
+
+/* ===================================
+   LESSON 13: KEYFRAME ANIMATIONS
+   =================================== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   LESSON 13: ACCESSIBILITY
+   =================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero-title,
+    .hero-subtitle,
+    .hero-buttons,
+    .feature-card {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ===================================
+   LESSON 14: RESPONSIVE MEDIA QUERIES
+   =================================== */
+
+/* ===================================
+   STEP 1: Tablet Breakpoint (769px - 1024px)
+   Adjusts layout for tablet screens
+   =================================== */
+@media (max-width: 1024px) {
+    /* Increase padding for better readability on tablets */
+    .container {
+        padding: 0 30px;
+    }
+    
+    /* Slightly reduce heading sizes */
+    h1 {
+        font-size: 42px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    /* Feature cards: 2 columns instead of 3 */
+    .features-grid {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+    
+    .feature-card {
+        flex: 1 1 calc(50% - 25px);
+        min-width: 280px;
+    }
+    
+    /* Reduce hero padding for tablets */
+    .hero {
+        padding: 100px 0;
+    }
+    
+    /* Reduce gap between text and images */
+    .about-content,
+    .community-content {
+        gap: 40px;
+    }
+}
+
+/* ===================================
+   STEPS 2-7: Mobile Breakpoint (768px and below)
+   Main mobile breakpoint - stacks layout vertically
+   =================================== */
+@media (max-width: 768px) {
+    /* Reduce container padding for more content space */
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* =====================================
+       STEP 2: Mobile Typography
+       Scale down all text for mobile screens
+       ===================================== */
+    h1 {
+        font-size: 36px;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    h3 {
+        font-size: 22px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    .hero-subtitle {
+        font-size: 18px;
+    }
+    
+    .section-subtitle {
+        font-size: 18px;
+    }
+    
+    /* =====================================
+       STEP 3: Mobile Hero Section
+       Reduce padding and stack buttons
+       ===================================== */
+    .hero {
+        padding: 80px 0;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;    /* Stack buttons vertically */
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .btn {
+        width: 200px;              /* Fixed width for consistency */
+        padding: 12px 25px;
+    }
+    
+    /* =====================================
+       STEP 4: Mobile Navigation
+       Hide desktop nav, show hamburger menu
+       ===================================== */
+    .main-nav {
+        display: none;             /* Hide desktop navigation */
+    }
+    
+    .hamburger {
+        display: block;            /* Show hamburger icon */
+    }
+    
+    /* The CSS "trick" - show menu when hamburger is focused */
+    .hamburger:focus + .mobile-nav {
+        display: flex;             /* Show mobile menu */
+    }
+    
+    /* =====================================
+       STEP 5: Mobile Features Section
+       Stack feature cards vertically
+       ===================================== */
+    .features {
+        padding: 60px 0;
+    }
+    
+    .features-grid {
+        flex-direction: column;    /* Single column layout */
+        gap: 20px;
+    }
+    
+    .feature-card {
+        flex: 1 1 100%;           /* Full width cards */
+        padding: 30px 20px;
+    }
+    
+    .section-subtitle {
+        margin-bottom: 40px;
+    }
+    
+    /* =====================================
+       STEP 6: Mobile About & Community
+       Stack text and images vertically
+       ===================================== */
+    .about,
+    .community {
+        padding: 60px 0;
+    }
+    
+    .about-content,
+    .community-content {
+        flex-direction: column;    /* Stack vertically */
+        gap: 30px;
+    }
+    
+    .about-text,
+    .community-text,
+    .about-image,
+    .community-image {
+        flex: 1 1 100%;           /* Full width */
+    }
+    
+    /* Always show text before image */
+    .about-image,
+    .community-image {
+        margin-top: 30px;
+        order: 2;                  /* Images go second */
+    }
+    
+    .about-text,
+    .community-text {
+        order: 1;                  /* Text goes first */
+    }
+    
+    /* =====================================
+       STEP 7: Mobile Footer
+       Stack footer columns vertically
+       ===================================== */
+    .footer-content {
+        flex-direction: column;    /* Single column */
+        gap: 30px;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+    }
+    
+    .social-links {
+        justify-content: center;   /* Center social links */
+    }
+}
+
+/* ===================================
+   STEP 8: Small Mobile Breakpoint (480px and below)
+   Extra compact layout for very small phones
+   =================================== */
+@media (max-width: 480px) {
+    /* Minimal padding for small screens */
+    .container {
+        padding: 0 15px;
+    }
+    
+    /* Extra small typography */
+    h1 {
+        font-size: 32px;
+    }
+    
+    h2 {
+        font-size: 26px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    /* Extra compact hero */
+    .hero {
+        padding: 60px 0;
+    }
+    
+    /* Extra compact features */
+    .features {
+        padding: 50px 0;
+    }
+    
+    .feature-card {
+        padding: 25px 15px;
+    }
+    
+    .feature-icon {
+        font-size: 50px;           /* Smaller icons */
+    }
+    
+    /* Extra compact about & community */
+    .about,
+    .community {
+        padding: 50px 0;
+    }
+    
+    .about-content,
+    .community-content {
+        gap: 25px;
+    }
+    
+    /* Extra compact footer */
+    .main-footer {
+        padding: 40px 0 20px 0;
+    }
+    
+    .social-links {
+        flex-direction: column;    /* Stack social links */
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* ===================================
+   STEP 9: Large Desktop Breakpoint (1200px and above)
+   Limits max width on very large screens
+   =================================== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;         /* Prevent content from getting too wide */
+    }
+    
+    /* Center features on large screens */
+    .features-grid {
+        justify-content: center;
+    }
+    
+    /* Prevent cards from getting too wide */
+    .feature-card {
+        max-width: 350px;
+    }
+}
+
+/* ===================================
+   STEP 10: Print Styles
+   Printer-friendly version
+   =================================== */
+@media print {
+    /* Hide elements not needed on paper */
+    .main-header,
+    .hero-buttons,
+    .main-footer {
+        display: none;
+    }
+    
+    /* Make hero printer-friendly */
+    .hero {
+        background: white !important;
+        color: black !important;
+        padding: 40px 0;
+    }
+    
+    /* Black text for readability */
+    .hero-title,
+    .section-title {
+        color: black !important;
+    }
+    
+    /* Simple borders instead of shadows */
+    .feature-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+    }
+}
+
+/* ===================================
+   END OF LESSON 14
+   Your GameHub is now fully responsive!
+   =================================== */
