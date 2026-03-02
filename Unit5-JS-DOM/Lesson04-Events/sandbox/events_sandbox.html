@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Sandbox</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background-color: #f0f2f5;
+            padding: 30px;
+            color: #333;
+        }
+        h1 { text-align: center; margin-bottom: 5px; color: #2c3e50; }
+        .subtitle { text-align: center; color: #7f8c8d; margin-bottom: 30px; font-size: 1.1rem; }
+        .section {
+            background: white; border-radius: 12px; padding: 25px;
+            margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .section h2 {
+            color: #2c3e50; margin-bottom: 15px; padding-bottom: 8px;
+            border-bottom: 2px solid #3498db; font-size: 1.3rem;
+        }
+        #grandparent {
+            background-color: #e74c3c; color: white; padding: 25px;
+            border-radius: 12px; cursor: pointer; font-weight: bold; font-size: 1rem;
+        }
+        #parent {
+            background-color: #3498db; color: white; padding: 25px;
+            border-radius: 10px; margin-top: 12px; cursor: pointer; font-weight: bold; font-size: 1rem;
+        }
+        #child {
+            background-color: #2ecc71; color: white; padding: 25px;
+            border-radius: 8px; margin-top: 12px; cursor: pointer; font-weight: bold; font-size: 1rem;
+        }
+        .button-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 15px; }
+        .btn {
+            padding: 12px 28px; font-size: 1rem; font-weight: 600;
+            border: none; border-radius: 8px; cursor: pointer;
+        }
+        #btn-hello { background-color: #3498db; color: white; }
+        #btn-count { background-color: #2ecc71; color: white; }
+        #btn-color { background-color: #9b59b6; color: white; }
+        #output {
+            background-color: #1e1e2e; color: #2ecc71;
+            font-family: 'Consolas', 'Courier New', monospace;
+            padding: 18px; border-radius: 8px; min-height: 50px;
+            font-size: 0.95rem; line-height: 1.6;
+        }
+        .card-row { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; }
+        .card {
+            background: white; border: 2px solid #ddd; border-radius: 10px;
+            padding: 20px 25px; text-align: center; cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; min-width: 130px;
+        }
+        .card h3 { font-size: 2rem; margin-bottom: 5px; }
+        .card p { color: #7f8c8d; font-size: 0.9rem; }
+        .card.active {
+            border-color: #3498db; box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+            background-color: #ebf5fb;
+        }
+        #status {
+            background: #2c3e50; color: #ecf0f1; padding: 12px 20px;
+            border-radius: 8px; text-align: center; font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Events Sandbox</h1>
+    <p class="subtitle">Learn how events work — then apply them to GameHub!</p>
+    <div class="section">
+        <h2>Section 1: Nested Boxes</h2>
+        <div id="grandparent">
+            🟥 Grandparent
+            <div id="parent">
+                🟦 Parent
+                <div id="child">
+                    🟩 Child
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Section 2: Buttons</h2>
+        <div class="button-row">
+            <button id="btn-hello" class="btn">Say Hello</button>
+            <button id="btn-count" class="btn">Count Clicks</button>
+            <button id="btn-color" class="btn">Change My Color</button>
+        </div>
+        <div id="output">Click a button to see output here...</div>
+    </div>
+    <div class="section">
+        <h2>Section 3: Cards</h2>
+        <div class="card-row">
+            <div class="card"><h3>⚔️</h3><p>Action</p></div>
+            <div class="card"><h3>🧩</h3><p>Puzzle</p></div>
+            <div class="card"><h3>🏎️</h3><p>Racing</p></div>
+            <div class="card"><h3>🏰</h3><p>Strategy</p></div>
+        </div>
+        <div id="status">No card selected</div>
+    </div>
+    <script src="sandbox_starter.js" defer></script>
+</body>
+</html>
