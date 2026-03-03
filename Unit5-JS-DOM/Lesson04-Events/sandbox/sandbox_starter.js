@@ -99,7 +99,16 @@ btnHello.addEventListener("click", () => {
 //   3. Gets the genre text: card.querySelector("p").textContent
 //   4. Updates status to: "Selected: [genre]"
 
-
+const cards = document.querySelectorAll(".card") // gives a nodelist (array like object)
+const status = document.querySelector("#status")
+console.log(cards)
+cards.forEach((card) => {
+    card.addEventListener('click', (e) => {
+        cards.forEach((c) => c.classList.remove("active")) //clear
+        card.classList.add("active")
+        status.textContent = `Selected: ${card.querySelector('p').textContent}`
+    })
+})
 
 // ============================================
 // 🏆 CHALLENGES
@@ -112,23 +121,46 @@ btnHello.addEventListener("click", () => {
 // Log: "You clicked: [id]" using e.target.id
 // Update output text to: "Clicked: [id]"
 
+const boxes = document.querySelectorAll("#grandparent, #parent, #child");
+
+boxes.forEach((box) => {
+    box.addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log(`You clicked: ${e.target.id}`);
+        output.textContent = `Clicked: ${e.target.id}`;
+    });
+});
 
 
+
+// ==============================
 // CHALLENGE 2: Double-Click Reset
-// Add a "dblclick" listener to #status
-// On double-click:
-//   - Remove 'active' from all cards
-//   - Reset status text to "No card selected"
-//   - Log "Cards reset!"
+// ==============================
 
 
+status.addEventListener("dblclick", () => {
+    cards.forEach((c) => c.classList.remove("active"));
+    status.textContent = "No card selected";
+    console.log("Cards reset!");
+});
 
-// CHALLENGE 3 ⭐: Keyboard Card Selector
-// Add a "keydown" listener to document
-// If the key is 1, 2, 3, or 4:
-//   - Convert key to number: const num = Number(e.key)
-//   - Remove 'active' from all cards
-//   - Convert NodeList: const cardArray = [...cards]
-//   - Add 'active' to cardArray[num - 1]
-//   - Update status with the genre name
 
+// Notes: dblclick event — same pattern as click
+
+
+// ==============================
+// CHALLENGE 3: Keyboard Card Selector
+// ==============================
+
+
+document.addEventListener("keydown", (e) => {
+    const num = Number(e.key);
+
+
+    if (num >= 1 && num <= 4) {
+        cards.forEach((c) => c.classList.remove("active"));
+        const cardArray = [...cards];
+        cardArray[num - 1].classList.add("active");
+        status.textContent = `Selected: ${cardArray[num - 1].querySelector("p").textContent} (keyboard)`;
+    }
+});
