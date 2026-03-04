@@ -73,6 +73,14 @@ btnHello.addEventListener("click", () => {
 //   - Updates output.textContent to show the count
 //   - Use a template literal: `Click count: ${clickCount}`
 
+const btnCount = document.querySelector("#btn-count");
+let clickCount = 0;
+
+
+btnCount.addEventListener("click", () => {
+    clickCount++;
+    output.textContent = `Click count: ${clickCount}`;
+});
 
 
 // ============================================
@@ -83,6 +91,15 @@ btnHello.addEventListener("click", () => {
 //   - Uses e.target to change the button's own background color
 //   - Toggle between its original color (#9b59b6) and "orange"
 //   - Update the output text to "Color changed!"
+const btnColor = document.querySelector("#btn-color");
+
+
+btnColor.addEventListener("click", (e) => {
+    e.target.style.backgroundColor =
+        e.target.style.backgroundColor === "orange" ? "#9b59b6" : "orange";
+    output.textContent = "Color changed!";
+});
+
 
 
 
