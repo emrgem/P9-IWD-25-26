@@ -18,4 +18,24 @@ contactForm.addEventListener("submit", (e) => {
         feedback.style.color = "E74C3C"
         return //stop further checks
     }
+
+    // 4 - Gate 2: Email has @
+    if(!email.includes("@")){
+        feedback.textContent = "❌ Please enter a valid email!"
+        feedback.style.color = "E74C3C"
+        return
+    }
+
+    // 5 - Gate3: Message Long Enough at least 10 char
+    if (message.length < 10) {
+        feedback.textContent = "❌ Message must be at least 10 characters!";
+        feedback.style.color = "#e74c3c";
+        return;
+    }
+
+    //All gates are passed
+    feedback.textContent = `✅ Thanks, "${name}! We got your message.`
+    feedback.style.color = "#2ECC71"
+    contactForm.reset(); // clears all the input fields
+
 })
