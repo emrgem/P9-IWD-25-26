@@ -74,10 +74,10 @@ function createTodo(text){
     item.addEventListener('click', (e) => {
         item.classList.toggle("completed")
     })
-    return item //Return created element
     //NEW: Right-Click to delete
     item.addEventListener("contextmenu", (e) => {
         e.preventDefault() //Stops the browser menu
         item.remove() //removes the item
     })
+    return item //Return created element
 }
