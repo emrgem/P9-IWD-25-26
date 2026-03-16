@@ -13,16 +13,20 @@ const todoList = document.querySelector("#todos")
 form.addEventListener("submit", (e) => {
     e.preventDefault() // stop the refresh
     const todoText = input.value.trim()
-    // console.log(`Adding todo: ${todoText}`)
-    // STEP 1: CREATE
-    const todoItem = document.createElement("li")
-    // STEP 2: CONFIGURE
-    todoItem.innerText = todoText
-    //todoItem.classList.add("todo-item") //we can also add classes
-    // STEP 3: APPEND
-    todoList.appendChild(todoItem)
-    //clear the input for next time
-    input.value = ""
+    if(todoText){
+        // console.log(`Adding todo: ${todoText}`)
+        // STEP 1: CREATE
+        const todoItem = document.createElement("li")
+        // STEP 2: CONFIGURE
+        todoItem.innerText = todoText
+        //todoItem.classList.add("todo-item") //we can also add classes
+        // STEP 3: APPEND
+        todoList.appendChild(todoItem)
+        //clear the input for next time
+        input.value = ""
+    }else {
+        alert("You can't leave it empty!")
+    }
 
 })
 
@@ -32,11 +36,11 @@ form.addEventListener("submit", (e) => {
 // ============================================
 
 //Reusable Function
-function createTodo(text){
-    const item = document.createElement("li")
-    item.innerText = text
-    return item //Return created element
-}
+// function createTodo(text){
+//     const item = document.createElement("li")
+//     item.innerText = text
+//     return item //Return created element
+// }
 
 const todosData = [
     "Buy groceries",
@@ -62,3 +66,18 @@ for (const todoText of todosData){
 // ============================================
 // PART 3: Complete & Delete
 // ============================================
+function createTodo(text){
+    const item = document.createElement("li")
+    item.innerText = text
+    
+    //NEW: Click to toggle completed class
+    item.addEventListener('click', (e) => {
+        item.classList.toggle("completed")
+    })
+    return item //Return created element
+    //NEW: Right-Click to delete
+    item.addEventListener("contextmenu", (e) => {
+        e.preventDefault() //Stops the browser menu
+        item.remove() //removes the item
+    })
+}
