@@ -9,6 +9,7 @@ const todoList = document.querySelector("#todos")
 // ============================================
 // PART 1: Create and Append
 // ============================================
+// Adds new todos from the form
 form.addEventListener("submit", (e) => {
     e.preventDefault() // stop the refresh
     const todoText = input.value.trim()
@@ -30,6 +31,32 @@ form.addEventListener("submit", (e) => {
 // PART 2: Arrays & Loops
 // ============================================
 
+//Reusable Function
+function createTodo(text){
+    const item = document.createElement("li")
+    item.innerText = text
+    return item //Return created element
+}
+
+const todosData = [
+    "Buy groceries",
+    "Walk the dog",
+    "Finish homework"
+]
+
+// for (const todoText of todosData){
+//     //Use 3-step pattern to create an element
+//     const todoItem = document.createElement("li")
+//     todoItem.innerText = todoText
+//     todoList.appendChild(todoItem)
+// }
+
+//DISPLAY STARTER TODOS
+for (const todoText of todosData){
+    // const item = createTodo(todoText)
+    // todoList.appendChild(item)
+    todoList.appendChild(createTodo(todoText))
+}
 
 
 // ============================================
