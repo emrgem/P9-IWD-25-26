@@ -42,7 +42,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault() // stop the refresh
     const text = input.value.trim()
     if (text === "") return
-    
+    clearEmptyState() //remove empty-state li before adding anything to the array
     todos.push(text) // Add to the array
     todoList.appendChild(createTodo(text))
     saveTodos() // save to the local storage
@@ -67,7 +67,15 @@ function createTodo(text){
     //NEW: Right-Click to delete
     item.addEventListener("contextmenu", (e) => {
         e.preventDefault() //Stops the browser menu
-        item.remove() //removes the item
+        item.remove() //removes the item from DOM
+        //remove from the array too
+        const index = todos.indexOf(text) //finds the index of the text
+        if(index > -1) todos.splice(index,1)//removes from the array
+        saveTodos() //overwrite the array with the updated values
+        if(todoList.children.length === 0){
+            showEmptyState()
+        }
+
     })
     return item //Return created element
 }
@@ -78,11 +86,21 @@ function createTodo(text){
 // ============================================
 // Replace the old startup loop with:
 
-
+const saved = localStorage.getItem("todos")
+if (saved){
+    todos = JSON.parse(saved) //turn the JSON string into array
+}
 
 // ============================================
 // STEP 6: Render the Loaded Todos
 // ============================================
-
+todoList.innerHTML = ""
+if(todos.length === 0){
+    showEmptyState()
+}else {
+    for(const text of todos){
+        todoList.appendChild(createTodo(text))
+    }
+}
 
 
