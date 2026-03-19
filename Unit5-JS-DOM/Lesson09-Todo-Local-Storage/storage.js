@@ -10,9 +10,9 @@ const todoList = document.querySelector("#todos")
 // STEP 1: Change todosData to a let array
 // ============================================
 let todos = [
-    "Buy groceries",
-    "Walk the dog",
-    "Finish homework"
+    // "Buy groceries",
+    // "Walk the dog",
+    // "Finish homework"
 ]
 
 // ============================================
@@ -21,6 +21,17 @@ let todos = [
 const saveTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos))
 }
+
+//HELPER FUNCTIONS
+function showEmptyState(){
+    todoList.innerHTML = '<li class="empty-state">No todos yet. Add one above! 👆</li>'
+}
+
+function clearEmptyState(){
+    const empty = todoList.querySelector('.empty-state')
+    if(empty) empty.remove()
+}
+
 
 
 // ============================================
