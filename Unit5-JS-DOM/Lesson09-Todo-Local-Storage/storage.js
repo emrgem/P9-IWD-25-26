@@ -38,16 +38,32 @@ function clearEmptyState() {
 // STEP 3: Save When Adding a Todo
 // ============================================
 // In your form submit handler, AFTER todoList.appendChild:
-form.addEventListener("submit", (e) => {
+// form.addEventListener("submit", (e) => {
+//     e.preventDefault() // stop the refresh
+//     const text = input.value.trim()
+//     if (text === "") return
+//     clearEmptyState() //remove empty-state li before adding anything to the array
+//     todos.push(text) // Add to the array
+//     todoList.appendChild(createTodo(text))
+//     saveTodos() // save to the local storage
+//     input.value = ""
+// })
+
+
+form.onsubmit = (e) => {
     e.preventDefault() // stop the refresh
     const text = input.value.trim()
     if (text === "") return
-    clearEmptyState() //remove empty-state li before adding anything to the array
+    
     todos.push(text) // Add to the array
-    todoList.appendChild(createTodo(text))
     saveTodos() // save to the local storage
+    
+    //clear search and show all todos (including new one)
+    searchInput.value = ""
+    renderTodos(todos)
     input.value = ""
-})
+}
+
 
 
 
