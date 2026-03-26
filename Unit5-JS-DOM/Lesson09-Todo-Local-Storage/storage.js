@@ -1,7 +1,7 @@
 // ============================================
 // UNIT 5, LESSON 09: Local Storage
 // ============================================
-//SELECT the form, input, and list
+
 const form = document.querySelector("#form")
 const input = document.querySelector("#input")
 const todoList = document.querySelector("#todos")
@@ -9,11 +9,7 @@ const todoList = document.querySelector("#todos")
 // ============================================
 // STEP 1: Change todosData to a let array
 // ============================================
-let todos = [
-    // "Buy groceries",
-    // "Walk the dog",
-    // "Finish homework"
-]
+let todos = []
 
 // ============================================
 // STEP 2: Write the Save Function
@@ -22,7 +18,7 @@ const saveTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos))
 }
 
-//HELPER FUNCTIONS
+// HELPER FUNCTIONS
 function showEmptyState() {
     todoList.innerHTML = '<li class="empty-state">No todos yet. Add one above! 👆</li>'
 }
@@ -32,93 +28,69 @@ function clearEmptyState() {
     if (empty) empty.remove()
 }
 
-
-
 // ============================================
 // STEP 3: Save When Adding a Todo
 // ============================================
-// In your form submit handler, AFTER todoList.appendChild:
-// form.addEventListener("submit", (e) => {
-//     e.preventDefault() // stop the refresh
-//     const text = input.value.trim()
-//     if (text === "") return
-//     clearEmptyState() //remove empty-state li before adding anything to the array
-//     todos.push(text) // Add to the array
-//     todoList.appendChild(createTodo(text))
-//     saveTodos() // save to the local storage
-//     input.value = ""
-// })
-
-
-form.onsubmit = (e) => {
-    e.preventDefault() // stop the refresh
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
     const text = input.value.trim()
     if (text === "") return
     
-    todos.push(text) // Add to the array
-    saveTodos() // save to the local storage
-    
-    //clear search and show all todos (including new one)
-    searchInput.value = ""
-    renderTodos(todos)
+    clearEmptyState()
+    todos.push(text)
+    // Re-render with the current search filter (or show all)
+    if (typeof filterTodos === "function") {
+        filterTodos(currentSearchTerm)
+    } else {
+        renderTodos(todos)
+    }
+    saveTodos()
     input.value = ""
-}
-
-
-
+})
 
 // ============================================
 // STEP 4: Save When Deleting a Todo
 // ============================================
-// In your contextmenu handler, AFTER item.remove():
 function createTodo(text) {
     const item = document.createElement("li")
     item.innerText = text
 
-    //NEW: Click to toggle completed class
-    item.addEventListener('click', (e) => {
+    // Click to toggle completed
+    item.addEventListener('click', () => {
         item.classList.toggle("completed")
     })
 
-    //NEW: Right-Click to delete
+    // Right‑click to delete
     item.addEventListener("contextmenu", (e) => {
-        e.preventDefault() //Stops the browser menu
-        item.remove() //removes the item from DOM
-        //remove from the array too
-        const index = todos.indexOf(text) //finds the index of the text
-        if (index > -1) todos.splice(index, 1)//removes from the array
-        saveTodos() //overwrite the array with the updated values
-        if (todoList.children.length === 0) {
-            showEmptyState()
+        e.preventDefault()
+
+        // Remove from the array
+        const index = todos.indexOf(text)
+        if (index > -1) todos.splice(index, 1)
+        saveTodos()
+
+        // Re‑apply the current search filter
+        if (typeof filterTodos === "function") {
+            filterTodos(currentSearchTerm)
+        } else {
+            renderTodos(todos)
         }
-
     })
-    return item //Return created element
-}
 
+    return item
+}
 
 // ============================================
 // STEP 5: Load from localStorage on Page Start
 // ============================================
-// Replace the old startup loop with:
-
 const saved = localStorage.getItem("todos")
 if (saved) {
-    todos = JSON.parse(saved) //turn the JSON string into array
+    todos = JSON.parse(saved)
 }
 
 // ============================================
 // STEP 6: Render the Loaded Todos
 // ============================================
-// todoList.innerHTML = ""
-// if (todos.length === 0) {
-//     showEmptyState()
-// } else {
-//     for (const text of todos) {
-//         todoList.appendChild(createTodo(text))
-//     }
-// }
-
 function renderTodos(todosToRender) {
     todoList.innerHTML = ""
     if (todosToRender.length === 0) {
@@ -130,6 +102,5 @@ function renderTodos(todosToRender) {
     }
 }
 
-// Call renderTodos on page load
+// ✅ Initial display – render the loaded todos
 renderTodos(todos)
-
