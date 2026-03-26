@@ -23,13 +23,13 @@ const saveTodos = () => {
 }
 
 //HELPER FUNCTIONS
-function showEmptyState(){
+function showEmptyState() {
     todoList.innerHTML = '<li class="empty-state">No todos yet. Add one above! 👆</li>'
 }
 
-function clearEmptyState(){
+function clearEmptyState() {
     const empty = todoList.querySelector('.empty-state')
-    if(empty) empty.remove()
+    if (empty) empty.remove()
 }
 
 
@@ -55,24 +55,24 @@ form.addEventListener("submit", (e) => {
 // STEP 4: Save When Deleting a Todo
 // ============================================
 // In your contextmenu handler, AFTER item.remove():
-function createTodo(text){
+function createTodo(text) {
     const item = document.createElement("li")
     item.innerText = text
-    
+
     //NEW: Click to toggle completed class
     item.addEventListener('click', (e) => {
         item.classList.toggle("completed")
     })
-    
+
     //NEW: Right-Click to delete
     item.addEventListener("contextmenu", (e) => {
         e.preventDefault() //Stops the browser menu
         item.remove() //removes the item from DOM
         //remove from the array too
         const index = todos.indexOf(text) //finds the index of the text
-        if(index > -1) todos.splice(index,1)//removes from the array
+        if (index > -1) todos.splice(index, 1)//removes from the array
         saveTodos() //overwrite the array with the updated values
-        if(todoList.children.length === 0){
+        if (todoList.children.length === 0) {
             showEmptyState()
         }
 
@@ -87,20 +87,33 @@ function createTodo(text){
 // Replace the old startup loop with:
 
 const saved = localStorage.getItem("todos")
-if (saved){
+if (saved) {
     todos = JSON.parse(saved) //turn the JSON string into array
 }
 
 // ============================================
 // STEP 6: Render the Loaded Todos
 // ============================================
-todoList.innerHTML = ""
-if(todos.length === 0){
-    showEmptyState()
-}else {
-    for(const text of todos){
-        todoList.appendChild(createTodo(text))
+// todoList.innerHTML = ""
+// if (todos.length === 0) {
+//     showEmptyState()
+// } else {
+//     for (const text of todos) {
+//         todoList.appendChild(createTodo(text))
+//     }
+// }
+
+function renderTodos(todosToRender) {
+    todoList.innerHTML = ""
+    if (todosToRender.length === 0) {
+        showEmptyState()
+    } else {
+        for (const text of todosToRender) {
+            todoList.appendChild(createTodo(text))
+        }
     }
 }
 
+// Call renderTodos on page load
+renderTodos(todos)
 
