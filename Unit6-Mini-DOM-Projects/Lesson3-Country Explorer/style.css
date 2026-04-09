@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;   /* width includes padding + border, easier sizing */
+    margin: 0;  padding: 0;   /* remove default browser spacing */
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    min-height: 100vh;        /* at least full viewport height */
+    padding: 40px 20px;
+    display: flex;            /* use flexbox for centering */
+    justify-content: center;  /* horizontally centre child (.container) */
+}
+.container {
+    width: 100%;
+    max-width: 1200px;        /* never wider than 1200px */
+}
