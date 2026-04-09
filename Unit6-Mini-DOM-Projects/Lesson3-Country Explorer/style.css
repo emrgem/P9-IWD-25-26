@@ -47,3 +47,21 @@ h1 {
     color: #e6edf3;
     outline: none;
 }
+#country-input:focus {
+    border: 2px solid green;
+    /* border-color: green; */
+}
+
+.btn {
+    padding: 14px 32px;
+    font-weight: 600;
+    background: #7EE787;
+    color: #0d1117;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+.btn:hover {
+    background: #6bd678;
+}
