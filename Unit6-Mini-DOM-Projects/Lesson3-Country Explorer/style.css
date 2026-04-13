@@ -1,40 +1,46 @@
+/* ============================================
+   Country Explorer — Flag Fully Visible
+   ============================================ */
 * {
-    box-sizing: border-box;   /* width includes padding + border, easier sizing */
-    margin: 0;  padding: 0;   /* remove default browser spacing */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #0d1117;
     color: #e6edf3;
-    min-height: 100vh;        /* at least full viewport height */
+    min-height: 100vh;
     padding: 40px 20px;
-    display: flex;            /* use flexbox for centering */
-    justify-content: center;  /* horizontally centre child (.container) */
+    display: flex;
+    justify-content: center;
 }
+
 .container {
     width: 100%;
-    max-width: 1200px;        /* never wider than 1200px */
+    max-width: 1200px;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.6rem;
     text-align: center;
     margin-bottom: 8px;
-    color: #7EE797;
+    color: #7EE787;
 }
 
 .subtitle {
     text-align: center;
-    color: #8B949E;
+    color: #8b949e;
     margin-bottom: 32px;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 .search-box {
     display: flex;
     gap: 12px;
     max-width: 660px;
-    margin:0 auto 28px;
+    margin: 0 auto 28px;
 }
 
 #country-input {
@@ -47,9 +53,9 @@ h1 {
     color: #e6edf3;
     outline: none;
 }
+
 #country-input:focus {
-    border: 2px solid green;
-    /* border-color: green; */
+    border-color: #7EE787;
 }
 
 .btn {
@@ -60,28 +66,96 @@ h1 {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
+
 .btn:hover {
     background: #6bd678;
 }
 
-.hidden {
-    display: none;
-}
-
 .error {
-    background: #1F1116;
-    border: 1px solid #F85149;
-    color: #F85149;
+    background: #1f1116;
+    border: 1px solid #f85149;
+    color: #f85149;
     padding: 14px 20px;
     border-radius: 12px;
     text-align: center;
     max-width: 660px;
     margin: 0 auto 20px;
 }
+
 .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 24px;
+}
+
+/* === COUNTRY CARD - Flag fully visible === */
+.country-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.country-card:hover {
+    border-color: #7EE787;
+    transform: translateY(-6px);
+    box-shadow: 0 0 0 3px rgba(126, 231, 135, 0.2);
+}
+
+.country-card .info {
+    flex: 1;
+    padding: 26px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.country-card h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.country-card p {
+    font-size: 1.05rem;
+    color: #c9d1d9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.country-card strong {
+    color: #e6edf3;
+    font-weight: 500;
+}
+
+/* Flag container - RIGHT SIDE, full height, no cropping */
+.country-card .flag-container {
+    width: 30%;
+    flex-shrink: 0;
+    background: #0d1117;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    border-left: 1px solid #30363d;
+}
+
+.country-card img {
+    width: 100%;
+    height: auto;           /* Changed - allows natural height */
+    max-height: 100%;       /* Prevents it from overflowing */
+    object-fit: contain;    /* KEY CHANGE: shows full flag without cropping */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
 }
