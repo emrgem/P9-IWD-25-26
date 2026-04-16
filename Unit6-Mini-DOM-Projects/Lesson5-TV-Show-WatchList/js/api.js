@@ -61,3 +61,23 @@ function displayShows(data) {
         resultsContainer.appendChild(card);
     }
 }
+
+
+
+
+
+function renderWatchList(){
+    if(!watchlist){
+        watchListContainer.innerHTML= `
+        <div class="empty-state"> No saved shows yet! Click 💓to add! </div>      
+        `
+        return
+    }
+
+    watchListContainer.innerHTML= ""
+    for(let i = 0; i<watchlist.length; i++){
+        const show = watchlist[i]
+        let imageUrl = show.image || "https://placehold.co/300x200?text=No+Image"
+
+    }
+}
