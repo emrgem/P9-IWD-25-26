@@ -40,25 +40,24 @@ function displayShows(data) {
     
     // ⚠️ TODO: Add a loop here!
     // For now, we only show the FIRST show
-    const firstShow = data[0].show;
-    
-    // Get image (or placeholder)
-    let imageUrl = "https://via.placeholder.com/300x200?text=No+Image";
-    if (firstShow.image && firstShow.image.medium) {
-        imageUrl = firstShow.image.medium;
+    // console.log(data)
+    for(let i = 0; i < data.length; i++){
+        const show = data[i].show;
+        // Get image (or placeholder)
+        let imageUrl = "https://via.placeholder.com/300x200?text=No+Image";
+        if (show.image && show.image.medium) {
+            imageUrl = show.image.medium;
+        }
+        // Create a card
+        const card = document.createElement("div");
+        card.className = "show-card";
+        card.innerHTML = `
+            <img src="${imageUrl}" alt="${show.name}">
+            <div class="info">
+                <h3>${show.name}</h3>
+            </div>
+        `;
+        // Add card to the page
+        resultsContainer.appendChild(card);
     }
-    
-    // Create a card
-    const card = document.createElement("div");
-    card.className = "show-card";
-    
-    card.innerHTML = `
-        <img src="${imageUrl}" alt="${firstShow.name}">
-        <div class="info">
-            <h3>${firstShow.name}</h3>
-        </div>
-    `;
-    
-    // Add card to the page
-    resultsContainer.appendChild(card);
 }
