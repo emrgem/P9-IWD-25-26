@@ -8,6 +8,8 @@ const watchListContainer = document.querySelector("#watchlist-container")
 let watchlist = []  //saved shows
 let  currentResults = [] //remember last search
 
+
+
 // LOCAL STORAGE FUNCTIONS
 function loadWatchlist(){
     const saved = localStorage.getItem("tvWatchList")
@@ -18,7 +20,5 @@ function loadWatchlist(){
 }
 
 function saveWatchList(){
-    localStorage.setItem("tvWatchList", JSON.stringify("watchlist"))
+    localStorage.setItem("tvWatchList", JSON.stringify(watchlist))
 }
-
-

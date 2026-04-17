@@ -1,3 +1,6 @@
+
+
+
 // ========== FETCH FUNCTION ==========
 
 function fetchShows() {
@@ -48,6 +51,17 @@ function displayShows(data) {
         if (show.image && show.image.medium) {
             imageUrl = show.image.medium;
         }
+        
+        let isSaved = false
+        for(let j = 0; j < watchlist.length; j++){
+            if(watchlist[j].id === show.id){
+                isSaved = true
+                break
+            }
+        }
+        
+        
+        const heartIcon = isSaved ? "❤️ Saved" : "🤍 Save"
         // Create a card
         const card = document.createElement("div");
         card.className = "show-card";
@@ -55,10 +69,16 @@ function displayShows(data) {
             <img src="${imageUrl}" alt="${show.name}">
             <div class="info">
                 <h3>${show.name}</h3>
+                <button class="heart-btn"> ${heartIcon} </button>
             </div>
         `;
         // Add card to the page
         resultsContainer.appendChild(card);
+
+        const heartBtn = card.querySelector(".heart-btn")
+        heartBtn.addEventListener("click", function(){
+            toggleWatchlist(show)
+        })
     }
 }
 
@@ -78,6 +98,48 @@ function renderWatchList(){
     for(let i = 0; i<watchlist.length; i++){
         const show = watchlist[i]
         let imageUrl = show.image || "https://placehold.co/300x200?text=No+Image"
-
+        //Design the show card
+        const card = document.createElement("div")
+        card.className = "watchlist-card"
+        card.innerHTML = `
+        <img src="${imageUrl}" alt="${show.name}">
+        <div class="info">
+            <h3>${show.name}</h3>
+            <button class="heart-btn">💓 Saved</button>
+        </div>
+        `
+        watchListContainer.appendChild(card)
     }
+}
+
+// Toggle Watchlist
+function toggleWatchlist(show){
+    let found = false
+    for(let i = 0; i < watchlist.length; i++){
+        if(watchlist[i].id === show.id){
+            found = true
+            break
+        }
+    }
+    if(found){
+        const newWatchlist = []
+        for(let i = 0; i<watchlist.length; i++){
+            if(watchlist[i].id !== show.id){
+                newWatchlist.push(watchlist[i])
+            }
+        }
+        watchlist = newWatchlist
+    }else {
+        let imageUrl = null
+        if(show.image){
+            imageUrl = show.image.medium || show.image.original
+            watchlist.push({
+                id: show.id,
+                name: show.name,
+                image: imageUrl
+            })
+        }
+    }
+    saveWatchList()
+    renderWatchList()
 }
