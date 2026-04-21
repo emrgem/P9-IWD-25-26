@@ -1,6 +1,3 @@
-
-
-
 // ========== FETCH FUNCTION ==========
 
 function fetchShows() {
@@ -25,6 +22,7 @@ function fetchShows() {
             return response.json();
         })
         .then(function(data) {
+            currentResults = data
             displayShows(data);
         });
 }
@@ -142,4 +140,6 @@ function toggleWatchlist(show){
     }
     saveWatchList()
     renderWatchList()
+    displayShows(currentResults)
 }
+

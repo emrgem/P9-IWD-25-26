@@ -9,7 +9,6 @@ let watchlist = []  //saved shows
 let  currentResults = [] //remember last search
 
 
-
 // LOCAL STORAGE FUNCTIONS
 function loadWatchlist(){
     const saved = localStorage.getItem("tvWatchList")
