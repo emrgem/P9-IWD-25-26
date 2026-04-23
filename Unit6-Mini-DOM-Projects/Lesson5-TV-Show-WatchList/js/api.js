@@ -99,11 +99,18 @@ function renderWatchList(){
         //Design the show card
         const card = document.createElement("div")
         card.className = "watchlist-card"
+        // card.innerHTML = `
+        // <img src="${imageUrl}" alt="${show.name}">
+        // <div class="info">
+        //     <h3>${show.name}</h3>
+        //     <button class="heart-btn">💓 Saved</button>
+        // </div>
+        // `
         card.innerHTML = `
         <img src="${imageUrl}" alt="${show.name}">
         <div class="info">
             <h3>${show.name}</h3>
-            <button class="heart-btn">💓 Saved</button>
+            <button class="remove-btn">❌ Remove</button>
         </div>
         `
         watchListContainer.appendChild(card)
@@ -143,3 +150,12 @@ function toggleWatchlist(show){
     displayShows(currentResults)
 }
 
+function updateWatchlistCount(){
+    const count = watchlist.length
+    // let word = "shows"
+    // if(count === 1){
+    //     word = "show"
+    // }
+    let word = (count === 1) ? "show" : "shows"
+    watchlistCount.textContent = `📺 You have ${count} saved ${word} `
+}
