@@ -7,5 +7,7 @@ searchInput.addEventListener("keypress", function(e) {
     }
 });
 
+
+
 //start the app: load saved watchlist
 loadWatchlist()

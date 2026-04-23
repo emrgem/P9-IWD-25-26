@@ -7,6 +7,7 @@ const clearAllBtn = document.querySelector("#clear-all-btn")
 const watchlistCount = document.querySelector("#watchlist-count")
 
 
+
 //Global Data
 let watchlist = []  //saved shows
 let  currentResults = [] //remember last search

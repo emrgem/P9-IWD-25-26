@@ -114,6 +114,10 @@ function renderWatchList(){
         </div>
         `
         watchListContainer.appendChild(card)
+        const removeBtn = document.querySelector(".remove-btn")
+        removeBtn.addEventListener("click", function(){
+        toggleWatchlist(show)
+})
     }
 }
 
