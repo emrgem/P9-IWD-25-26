@@ -20,6 +20,7 @@ function loadWatchlist(){
         watchlist = JSON.parse(saved)
     }
     renderWatchList()
+    updateWatchlistCount()
 }
 
 function saveWatchList(){
