@@ -163,3 +163,22 @@ function updateWatchlistCount(){
     let word = (count === 1) ? "show" : "shows"
     watchlistCount.textContent = `📺 You have ${count} saved ${word} `
 }
+
+function clearAllWatchlist(){
+    //Don't do anything if watchlist is empty
+    if(watchlist.length === 0){
+        return
+    }
+
+    //Ask for confirmation
+    const confirmed = confirm(`Remove all ${watchlist.length} "saved shows?"`)
+    if (confirmed){
+        watchlist = []
+        saveWatchList()
+        renderWatchList()
+        //update hearts in search results
+        if(currentResults.length > 0){
+            displayShows(currentResults)
+        }
+    }
+}

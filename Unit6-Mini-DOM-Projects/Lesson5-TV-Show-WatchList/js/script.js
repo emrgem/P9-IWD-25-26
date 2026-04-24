@@ -8,6 +8,8 @@ searchInput.addEventListener("keypress", function(e) {
 });
 
 
+clearAllBtn.addEventListener("click", clearAllWatchlist)
+
 
 //start the app: load saved watchlist
 loadWatchlist()
